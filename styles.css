@@ -1,5 +1,7 @@
 :root {
-    --body-bg: #d7e5e6;
+    --white-bg: #fff;
+    --black-bg: #000;
+    --grey: #333;
 }
 
 /*  reseting css  */
@@ -23,7 +25,6 @@ html {
 body {
     min-height: 100vh;
     width: 100vw;
-    background-color: var(--body-bg);
 }
 
 header {
@@ -43,28 +44,40 @@ a {
 /*  nav part  */
 nav {
     height: 80px;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--white-bg);
+    z-index: 10;
 }
 
 main {
-    width: 100%;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: var(--body-bg);
-    z-index: 1;
+    width: 100vw;
+    background-color: var(--white-bg);
+}
+
+section {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+}
+
+.white {
+    background-color: var(--white-bg);
+    color: #000;
+}
+
+.black {
+    background-color: var(--black-bg);
+    color: #fff;
 }
 
 .divider {
     width: 80%;
-    border: 1px solid #333;
+    border: 1px solid var(--grey);
     margin: 0 auto;
     position: absolute;
     bottom: 5rem;
@@ -81,12 +94,45 @@ main {
 }
 
 .nav-left {
-    width: 38%;
+    width: 22%;
     height: 80px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.face {
+    position: absolute;
+}
+
+.blink {
+    opacity: 0;
+    animation: blinkAnim 5s infinite; /* blink in every 5 seconds for infinite times */
+}
+
+@keyframes blinkAnim {
+    0% {
+        opacity: 0;
+    }
+    46% {
+        opacity: 0;
+    }
+    47% {
+        opacity: 1;
+    } /* blink moment */
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    } /* back to normal */
+    100% {
+        opacity: 0;
+    }
 }
 
 .nav-right {
-    width: 46%;
+    width: 45%;
 }
 
 .nav-right > ul {
@@ -108,7 +154,7 @@ main {
 .hero-des {
     font-size: 1.9rem;
     margin-top: 0.7rem;
-    color: #333;
+    color: var(--grey);
     font-style: italic;
 }
 
@@ -116,8 +162,32 @@ main {
     margin-top: 2.2rem;
     padding: 0.8rem 1.8rem;
     font-size: 1.2rem;
-    background-color: #000;
+    background-color: var(--black-bg);
     border: none;
     cursor: pointer;
-    color: #fff;
+    color: var(--white-bg);
+}
+
+/* about me */
+.about-me {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
