@@ -1,8 +1,19 @@
-const nameIpt = document.getElementById("user-name");
-const btn = document.getElementById("btn");
-const heroTtl = document.getElementById("hero-title");
+// Minimal, robust nav-theme observer using IntersectionObserver
+const nav = document.querySelector("nav");
+const sections = document.querySelectorAll(".sec");
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const theme = entry.target.dataset.theme;
+                nav.className = theme;
+            }
+        });
+    },
+    {
+        threshold: 0,
+        rootMargin: "-80px 0px 0px 0px",
+    }
+);
 
-btn.addEventListener("click", ()=>{
-    // build the logic behind displaying the name within the hero title
-    heroTtl.innerText += (nameIpt.value)? nameIpt.value: "World\n";
-});
+sections.forEach((s) => observer.observe(s));
