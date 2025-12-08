@@ -1,4 +1,3 @@
-// Minimal, robust nav-theme observer using IntersectionObserver
 const nav = document.querySelector("nav");
 const sections = document.querySelectorAll(".sec");
 const observer = new IntersectionObserver(
