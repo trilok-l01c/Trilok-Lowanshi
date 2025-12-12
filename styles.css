@@ -53,6 +53,12 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+svg {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
 /*  nav part  */
 nav {
     height: 80px;
@@ -63,6 +69,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: 10;
+    background-color: var(--white-bg);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -192,18 +199,11 @@ header .divider {
 }
 
 .about-me > .left {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
+    width: 45%;
 }
 
 .about-me > .right {
-    box-sizing: content-fit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 45%;
 }
 .about-me img {
     width: 500px;
