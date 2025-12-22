@@ -30,6 +30,7 @@ body {
 h3 {
     font-size: 2.7rem;
     margin-bottom: 1.2rem;
+    text-align: left;
 }
 
 p {
@@ -96,6 +97,7 @@ section {
 
 .divider {
     width: 76%;
+    height: 0;
     border: 1px solid var(--grey);
     margin: 0 auto;
 }
@@ -167,6 +169,10 @@ header .divider {
     align-items: center;
 }
 
+.nav-right > ul > li :hover,
+.nav-right > ul > li :active {
+    color: #777;
+}
 /*  Hero area  */
 
 .hero-title {
@@ -194,17 +200,23 @@ header .divider {
 .about-me {
     padding: 0 5rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.about-me > .left {
-    width: 45%;
+.about-me .left,
+.about-me .right {
+    width: 50%;
 }
 
-.about-me > .right {
-    width: 45%;
+.about-me .right {
+    display: flex;
+    justify-content: center;
 }
-.about-me img {
-    width: 500px;
+
+.about-me .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
